@@ -3,7 +3,7 @@
  * description: Window event for next.
  * homepage: https://github.com/afeiship/next-global-event
  * version: 1.0.0
- * date: 2021-03-19 17:09:41
+ * date: 2021-03-19 17:22:17
  * license: MIT
  */
 
@@ -14,15 +14,22 @@
   var NxGlobalEvent = nx.declare('nx.GlobalEvent', {
     statics: {
       on: function (inName, inHandler) {
-        global.addEventListener(inName, inHandler, false);
+        var handler = function (event) {
+          var detail = event.detail;
+          var type = event.type;
+          inHandler({ type: type, data: detail });
+        };
+
+        global.addEventListener(inName, handler, false);
+
         return {
           destroy: function () {
-            global.removeEventListener(inName, inHandler, false);
+            global.removeEventListener(inName, handler, false);
           }
         };
       },
       emit: function (inName, inData) {
-        var event = new global.Event(inName, inData);
+        var event = new global.CustomEvent(inName, { detail: inData });
         global.dispatchEvent(event);
       }
     }

@@ -30,7 +30,7 @@ const res = NxGlobalEvent.on('panel:ok', (inEvent)=>{
 res.destroy();
 
 // trigger event
-NxGlobalEvent.emit('panel:ok', { data: true });
+NxGlobalEvent.emit('panel:ok', { ready: true });
 ```
 
 ## license
