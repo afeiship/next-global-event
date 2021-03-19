@@ -6,9 +6,7 @@
     statics: {
       on: function (inName, inHandler) {
         var handler = function (event) {
-          var detail = event.detail;
-          var type = event.type;
-          inHandler({ type: type, data: detail });
+          inHandler(event.detail);
         };
 
         global.addEventListener(inName, handler, false);
