@@ -2,8 +2,8 @@
  * name: @jswork/next-global-event
  * description: Window event for next.
  * homepage: https://github.com/afeiship/next-global-event
- * version: 1.0.1
- * date: 2021-03-19 17:22:53
+ * version: 1.0.2
+ * date: 2021-03-19 18:22:35
  * license: MIT
  */
 
@@ -15,9 +15,7 @@
     statics: {
       on: function (inName, inHandler) {
         var handler = function (event) {
-          var detail = event.detail;
-          var type = event.type;
-          inHandler({ type: type, data: detail });
+          inHandler(event.detail);
         };
 
         global.addEventListener(inName, handler, false);
