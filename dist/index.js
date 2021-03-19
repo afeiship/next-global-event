@@ -2,8 +2,8 @@
  * name: @jswork/next-global-event
  * description: Window event for next.
  * homepage: https://github.com/afeiship/next-global-event
- * version: 1.0.0
- * date: 2021-03-19 17:22:17
+ * version: 1.0.1
+ * date: 2021-03-19 17:22:53
  * license: MIT
  */
 
