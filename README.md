@@ -12,9 +12,10 @@ npm install -S @jswork/next-global-event
 ```
 
 ## apis
-| api | params | description   |
-| --- | ------ | ------------- |
-| on | -      | desc balabala |
+| api  | params          | description    |
+| ---- | --------------- | -------------- |
+| on   | (name, handler) | Attach event.  |
+| emit | (name, data)    | Trigger event. |
 
 ## usage
 ```js
