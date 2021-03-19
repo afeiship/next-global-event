@@ -13,14 +13,23 @@ npm install -S @jswork/next-global-event
 
 ## apis
 | api | params | description   |
-|-----|--------|---------------|
-| get | -      | desc balabala |
+| --- | ------ | ------------- |
+| on | -      | desc balabala |
 
 ## usage
 ```js
 import NxGlobalEvent from '@jswork/next-global-event';
 
-// code goes here:
+// attach event
+const res = NxGlobalEvent.on('panel:ok', (inEvent)=>{
+  console.log('I am ok');
+});
+
+// dettach event
+res.destroy();
+
+// trigger event
+NxGlobalEvent.emit('panel:ok', { data: true });
 ```
 
 ## license
